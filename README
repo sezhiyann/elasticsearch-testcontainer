@@ -1,0 +1,4 @@
+contains code to run elastic search containers using testcontainers for integration tests.
+
+built on top of spring boot, testcontainers, junit5, and elasticsearch.
+

@@ -1,0 +1,10 @@
+debug: false
+logging.level.org.springframework.data.elasticsearch.core: DEBUG
+spring:
+  elasticsearch:
+    host: localhost
+    port: ${elasticsearch.port:9200}
+    uris: http://${spring.elasticsearch.host}:${spring.elasticsearch.port}
+    username: elastic
+    password: localpwd
+  data.elasticsearch.repositories.enabled: true
