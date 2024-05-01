@@ -1,6 +1,5 @@
 package org.example;
 
-import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpHost;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
@@ -10,14 +9,16 @@ import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestClientBuilder;
 import org.elasticsearch.client.RestHighLevelClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
-@Slf4j
-@Configuration
-public class ElasticsearchConfig {
+@SpringBootApplication
+public class TestApplication {
 
+  private static final Logger LOGGER = LoggerFactory.getLogger(TestApplication.class);
 
   @Bean(destroyMethod = "close")
   public RestHighLevelClient restHighLevelClient(
@@ -47,9 +48,10 @@ public class ElasticsearchConfig {
     try {
       restHighLevelClient.ping(RequestOptions.DEFAULT);
     } catch (Exception e) {
-      log.error("Error while connecting to elastic search", e);
+      LOGGER.error("Error while connecting to elastic search", e);
       System.exit(1);
     }
     return restHighLevelClient;
   }
+
 }
