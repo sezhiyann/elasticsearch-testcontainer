@@ -12,6 +12,7 @@
   <groupId>org.example</groupId>
   <artifactId>integration-test-utils</artifactId>
   <version>0.0.0</version>
+  <packaging>jar</packaging>
 
   <properties>
     <maven.compiler.source>17</maven.compiler.source>
