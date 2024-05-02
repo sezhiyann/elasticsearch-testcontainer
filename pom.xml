@@ -13,6 +13,7 @@
   <artifactId>integration-test-utils</artifactId>
   <version>0.0.0</version>
   <packaging>jar</packaging>
+  <!--test versioning-->
 
   <properties>
     <maven.compiler.source>17</maven.compiler.source>
